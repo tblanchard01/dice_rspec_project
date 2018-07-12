@@ -1,6 +1,9 @@
 class Dice
-    def initialize
+  def initialize
         @numbers = [1,2,3,4,5,6]
-    end
+  end
+    def random 
+       @numbers[rand(6)]
+    end 
 end
  
