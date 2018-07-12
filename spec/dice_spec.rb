@@ -11,11 +11,14 @@ require 'dice_game'
 #So that I give players a good game experience
 #I want the dice roll to be randomly picked
 
-describe Dice do
-  describe "creates a new dice" do   
-    it "creates new dice object" do
+describe Dice do 
+  let(:subject) { described_class.new }
+   it "dice.new creates new dice object" do
       expect(Dice.new).to be_instance_of Dice 
     end
- end 
+     it "returns a random number from 1-6" do 
+      expect(subject.numbers).to receive(:sample).and_return(12345)
+      expect(subject.random).to eq 12345
+  end
 end 
 
